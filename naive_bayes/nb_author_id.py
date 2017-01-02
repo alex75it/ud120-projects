@@ -27,24 +27,13 @@ features_train, features_test, labels_train, labels_test = preprocess()
 #########################################################
 ### your code goes here ###
 
-# create classifier and fit it with train data
+
 from sklearn.naive_bayes import GaussianNB
-classifier = GaussianNB()
-
-t0 = time()
-classifier.fit(features_train, labels_train)
-print("Training time: {0}".format( round(time()-t0, 3)))
-
-# create a prediction
-t0 = time()
-labels_prediction = classifier.predict(features_test)
-print("Prediction time: {0}".format( round(time()-t0, 3)))
-
-# calculate accuracy
 from sklearn.metrics import accuracy_score
-accuracy = accuracy_score(labels_test, labels_prediction)
-
-print("Accuracy: {0}".format(accuracy))
+clf = GaussianNB()
+clf.fit(features_train, labels_train)
+pred = clf.predict(features_test)
+print accuracy_score(pred, labels_test)
 
 #########################################################
 
