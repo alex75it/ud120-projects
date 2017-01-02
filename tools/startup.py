@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!D:\Programming\Python\virtualenv\2.7\Scripts
+
 
 print
 print "checking for nltk"
